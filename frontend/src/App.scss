@@ -1,0 +1,115 @@
+@font-face {
+  font-family: Cera;
+  src: url('./fonts/CeraRoundPro-Medium.otf');
+}
+
+@font-face {
+  font-family: CeraLight;
+  src: url('./fonts/CeraRoundPro-Light.otf');
+}
+
+.Landing {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: linear-gradient(to top, rgba(0,0,0,0), rgba(255,255,255,1));
+
+  h1 {
+    width: 40rem;
+    text-align: center;
+    font-weight: bold;
+    color: rgb(0, 123, 255);
+    font-family: Cera;
+  }
+
+  &-logo {
+    width: 9rem;
+    height: 9rem;
+    margin-left: 1rem;
+    position: absolute;
+    top: 0;
+    left: 1rem;
+  }
+
+  &-signin {
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+  }
+
+  &-conent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-login {
+    width: 30rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  &-social {
+    margin: 1rem;
+
+    &-fb {
+      margin-right: 0.7rem;
+      background-color: rgb(0, 123, 255);
+    }
+
+    &-g {
+      color: rgb(0, 123, 255);
+
+      &-svg {
+        height: 1rem;
+      }
+    }
+
+    &-g:hover {
+      background-color: rgb(255, 253, 226) !important;
+    }
+  }
+
+  &-button {
+    border-radius: 0 25px 25px 0 !important;
+    height: 50px !important;
+    width: 10rem;
+    font-size: large !important;
+    font-weight: 400 !important;
+  }
+
+  &-form {
+    display: flex;
+    align-items: center;
+    justify-content: baseline;
+    margin-top: 2rem;
+  }
+
+  &-alternative {
+    margin-right: 1rem;
+  }
+}
+
+.form-control {
+  border-radius: 25px 0 0 25px !important;
+  height: 50px !important;
+}
+
+html, body ,#root, .App {
+  height: 100%;
+  background-image: url('./images/bg.jpg');
+  font-family: Cera !important;
+}
+
+.btn {
+  font-family: Cera !important;
+}
+
+input {
+  font-family: Cera !important;
+}
