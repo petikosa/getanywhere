@@ -1,0 +1,19 @@
+.Login {
+  background-color: white;
+  border-radius: 15px;
+  width: 17rem;
+  padding: 1rem;
+  position: absolute;
+  top: 0.5rem;
+  right: 2rem;
+
+  &-buttons {
+    &-cancel {
+      margin-left: 1rem;
+    }
+  }
+
+  &-input {
+    margin-bottom: 1rem;
+  }
+}

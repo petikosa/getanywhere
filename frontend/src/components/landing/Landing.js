@@ -1,23 +1,36 @@
-import React from "react";
-import logo from "../images/logo.png";
+import React, { useState } from "react";
+import logo from "../../images/logo.png";
 import { FormInput, Button } from "shards-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
-import google from "../images/google.svg"
+import google from "../../images/google.svg";
+import Login from './Login';
 
 export default function Landing() {
+  const [toggleLogin, setToggleLogin] = useState(false);
+
+  const cancelPopup = () => {
+    setToggleLogin(false);
+    console.log('cancelPopup in Landing');
+  }
+
+  let loginPopup;
+  if (toggleLogin) {
+    loginPopup = <Login onClick={cancelPopup}/>;
+  }
   return (
     <div className="Landing">
+      {loginPopup}
       <div className="Landing-conent-wrapper">
         <img className="Landing-logo" src={logo} alt="Logo" />
-        <Button pill className="Landing-signin">
+        {!toggleLogin && <Button pill className="Landing-signin" onClick={() => setToggleLogin(!toggleLogin)}>
           Sign In
-        </Button>
+        </Button>}
         <div className="Landing-conent">
           <h1>Connect with new friends anywhere in the world</h1>
           <div className="Landing-login">
             <div className="Landing-form">
-              <FormInput placeholder="Your e-mail" />
+              <FormInput className="Landing-input" placeholder="Your e-mail" />
               <Button pill className="Landing-button">
                 Register
               </Button>

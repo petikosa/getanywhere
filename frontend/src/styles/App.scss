@@ -1,0 +1,25 @@
+@font-face {
+  font-family: Cera;
+  src: url('../fonts/CeraRoundPro-Medium.otf');
+}
+
+@font-face {
+  font-family: CeraLight;
+  src: url('../fonts/CeraRoundPro-Light.otf');
+}
+
+html, body ,#root, .App {
+  height: 100%;
+  background-image: url('../images/bg.jpg');
+  font-family: Cera !important;
+}
+
+.btn {
+  font-family: Cera !important;
+}
+
+.form-control {
+  border-radius: 20px !important;
+}
+
+@import './imports.scss';
