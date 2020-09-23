@@ -5,9 +5,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import google from "../../images/google.svg";
 import Login from './Login';
+import { useHistory } from "react-router-dom";
 
 export default function Landing() {
   const [toggleLogin, setToggleLogin] = useState(false);
+  let history = useHistory();
 
   const cancelPopup = () => {
     setToggleLogin(false);
@@ -21,17 +23,17 @@ export default function Landing() {
   return (
     <div className="Landing">
       {loginPopup}
-      <div className="Landing-conent-wrapper">
+      <div className="Landing-content-wrapper">
         <img className="Landing-logo" src={logo} alt="Logo" />
-        {!toggleLogin && <Button pill className="Landing-signin" onClick={() => setToggleLogin(!toggleLogin)}>
+        {!toggleLogin && <Button pill className="Landing-signin" onClick={() => setToggleLogin(true)}>
           Sign In
         </Button>}
-        <div className="Landing-conent">
+        <div className="Landing-content">
           <h1>Connect with new friends anywhere in the world</h1>
           <div className="Landing-login">
             <div className="Landing-form">
               <FormInput className="Landing-input" placeholder="Your e-mail" />
-              <Button pill className="Landing-button">
+              <Button pill className="Landing-button" onClick={() => history.push('/register')}>
                 Register
               </Button>
             </div>
