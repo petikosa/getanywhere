@@ -1,0 +1,27 @@
+.Register {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 3rem;
+
+  &-buttons {
+    margin-top: 1rem;
+
+    &-left {
+      margin-right: 2rem;
+    }
+  }
+
+  &-title {
+    margin-bottom: 4rem;
+  }
+  
+  &-form {
+    width: 20rem;
+
+    &-el {
+      margin-bottom: 1rem;
+    }
+  }
+}
