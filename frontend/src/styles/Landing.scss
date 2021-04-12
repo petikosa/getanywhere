@@ -8,7 +8,6 @@
 
   &-wrapper {
     background-image: url('../images/bg.jpg');
-    width: 100%;
     height: 100%;
   }
 
@@ -21,19 +20,15 @@
     letter-spacing: 0.05rem;
   }
 
+  &-logowrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+  }
+
   &-logo {
     width: 9rem;
     height: 9rem;
-    margin-left: 1rem;
-    position: absolute;
-    top: 0;
-    left: 1rem;
-  }
-
-  &-signin {
-    position: absolute;
-    top: 1rem;
-    right: 2rem;
   }
 
   &-content {
@@ -41,6 +36,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    &-wrapper {
+      margin-bottom: 5rem;
+    }
   }
 
   &-login {
@@ -75,7 +74,6 @@
   }
 
   &-button {
-    border-radius: 0 25px 25px 0 !important;
     height: 50px !important;
     width: 10rem;
     font-size: large !important;
@@ -85,19 +83,12 @@
   &-form {
     display: flex;
     align-items: center;
-    justify-content: baseline;
+    justify-content: space-around;
     margin-top: 2rem;
-    width: 25rem;
+    width: 23rem;
   }
 
   &-alternative {
     margin-right: 1rem;
-  }
-  
-  &-input {
-    font-family: Cera !important;
-    border-radius: 25px 0 0 25px !important;
-    height: 50px !important;
-    width: 100%;
   }
 }

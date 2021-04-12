@@ -1,54 +1,41 @@
-import React, { useState } from "react";
-import logo from "../../images/logo.png";
-import { FormInput, Button } from "shards-react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook } from "@fortawesome/free-brands-svg-icons";
-import google from "../../images/google.svg";
-import Login from "./Login";
-import { useHistory } from "react-router-dom";
+import React, { useEffect } from 'react';
+import logo from '../../images/logo.png';
+import { Button } from 'shards-react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook } from '@fortawesome/free-brands-svg-icons';
+import google from '../../images/google.svg';
+import { useHistory } from 'react-router-dom';
 
 export default function Landing() {
-  const [toggleLogin, setToggleLogin] = useState(false);
+  useEffect(() => {
+    console.log('mounted or updated');
+    fetch('http://localhost:8080/').then((result) =>
+      console.log('this is the response: ', result)
+    );
+  });
+
   let history = useHistory();
 
-  const cancelPopup = () => {
-    setToggleLogin(false);
-    console.log("cancelPopup in Landing");
-  };
-
-  let loginPopup;
-  if (toggleLogin) {
-    loginPopup = <Login onClick={cancelPopup} />;
-  }
   return (
     <div className="Landing-wrapper">
       <div className="Landing">
-        {loginPopup}
         <div className="Landing-content-wrapper">
-          <img className="Landing-logo" src={logo} alt="Logo" />
-          {!toggleLogin && (
-            <Button
-              pill
-              className="Landing-signin"
-              onClick={() => setToggleLogin(true)}
-            >
-              Sign In
-            </Button>
-          )}
           <div className="Landing-content">
+            <div className="Landing-logowrap">
+              <img className="Landing-logo" src={logo} alt="Logo" />
+            </div>
             <h1>Connect with new friends anywhere in the world</h1>
             <div className="Landing-login">
               <div className="Landing-form">
-                <FormInput
-                  className="Landing-input"
-                  placeholder="Your e-mail"
-                />
                 <Button
                   pill
                   className="Landing-button"
-                  onClick={() => history.push("/register")}
+                  onClick={() => history.push('/register')}
                 >
                   Register
+                </Button>
+                <Button pill className="Landing-button" onClick={() => {}}>
+                  Sign In
                 </Button>
               </div>
               <div className="Landing-social">
